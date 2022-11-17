@@ -21,7 +21,7 @@ export default {
             <div class="row g-2">
                 <div class="col-3" v-for="movie in store.movies">
                     <div class="my_card">
-                        <img :src="movie.poster_path" alt="">
+                        <img :src="movie." alt="">
                         <p>{{ movie.title }}</p>
                         <p>{{ movie.original_title }}</p>
                         <p>{{ movie.original_language }}</p>
