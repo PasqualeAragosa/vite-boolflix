@@ -1,1 +1,15 @@
 @use '../../../node_modules/bootstrap/scss/bootstrap-grid.scss';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aqua;
+}
+
+img {
+    max-width: 100%;
+}
