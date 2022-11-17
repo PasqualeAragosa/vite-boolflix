@@ -17,11 +17,12 @@ export default {
     },
     methods: {
         callApi(url) {
+            url += `?api_key=${this.store.api_key}&query=${this.store.query}`
             axios.get(url)
                 .then(response => {
                     console.log(url);
-                    url += `?api_key=${this.store.api_key}&query=${this.store.query}`
-                    this.store.movie = response.data.results;
+                    this.store.movies = response.data.results;
+                    this.store.query = '';
                 })
                 .catch(error => {
                     console.log(error.message);

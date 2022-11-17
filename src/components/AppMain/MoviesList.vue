@@ -19,7 +19,13 @@ export default {
     <div class="movies_list">
         <div class="container">
             <div class="row g-2">
-                <MovieTitle v-for="movie in store.movies" :movie="movie" />
+                <div class="col-3" v-for="movie in store.movies">
+                    <p>{{ movie.title }}</p>
+                    <p>{{ movie.original_title }}</p>
+                    <p>{{ movie.original_language }}</p>
+                    <p>{{ movie.vote_average }}</p>
+                </div>
+                <!-- /.col-3 -->
             </div>
         </div>
         <!-- /.container -->
