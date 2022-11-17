@@ -1,18 +1,30 @@
 <script>
-import SearchMovie from './AppMain/SearchMovie.vue';
+import { store } from '../store.js';
+import SearchBox from './AppMain/SearchBox.vue';
 import MoviesList from './AppMain/MoviesList.vue';
 
 export default {
     name: 'AppMain',
     components: {
-        SearchMovie, MoviesList,
+        SearchBox, MoviesList,
+    },
+    data() {
+        return {
+            store,
+        }
+    },
+    mounted() {
+        this.store.callApi(this.store.API_url);
     }
+
 }
 </script>
 
 <template>
-    <SearchMovie></SearchMovie>
-    <MoviesList></MoviesList>
+    <main>
+        <SearchBox @filterByMovie="store.callApi(store.API_url)" />
+        <MoviesList />
+    </main>
 </template>
 
 <style lang="scss">
