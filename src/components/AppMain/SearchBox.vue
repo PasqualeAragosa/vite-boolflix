@@ -15,7 +15,6 @@ export default {
     <div class="search_box">
         <input type="search" v-model="store.query" @keyup.enter="$emit('filterByMovie')">
         <button>Search</button>
-        <p>{{ store.query }}</p>
     </div>
     <!-- /.search_box -->
 </template>
