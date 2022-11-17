@@ -19,13 +19,20 @@ export default {
     <div class="movies_list">
         <div class="container">
             <div class="row g-2">
-                <div class="col-3" v-for="movie in store.movies">
+                <div class="col-3 py-4" v-for="movie in store.movies">
                     <div class="my_card">
-                        <img :src="`${store.API_url_images}${movie.poster_path}`" alt="">
-                        <p>{{ movie.title }}</p>
-                        <p>{{ movie.original_title }}</p>
-                        <p>{{ movie.original_language }}</p>
-                        <p>{{ movie.vote_average }}</p>
+                        <div class="images">
+                            <img :src="`${store.API_images}${movie.poster_path}`" alt="">
+                        </div>
+                        <!-- /.images -->
+                        <div class="details">
+                            <p class="title">Titolo: {{ movie.title }}</p>
+                            <p class="original_title">Titolo originale: {{ movie.original_title }}</p>
+                            <p>Lingua: {{ movie.original_language }}</p>
+                            <p>Voto: {{ movie.vote_average }}</p>
+                            <p>Trama: {{ movie.overview }}</p>
+                        </div>
+                        <!-- /.details -->
                     </div>
                     <!-- /.my_card -->
                 </div>
@@ -38,5 +45,30 @@ export default {
 </template>
 
 <style lang="scss">
+.my_card {
+    height: 450px;
+    width: 300px;
+    color: white;
+    position: relative;
 
+    .images {
+
+        img {
+            height: 100%;
+
+            &:hover {
+                opacity: 0;
+            }
+        }
+    }
+
+    .details {
+        position: absolute;
+        top: 10%;
+        padding-left: 0.5rem;
+        z-index: -1;
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
 </style>

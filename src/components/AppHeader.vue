@@ -7,14 +7,25 @@ export default {
 <template>
     <header>
         <div class="content">
-            <h1>Boolflix</h1>
+            <img src="../assets/img/booolflix.png" alt="">
         </div>
         <!-- /.content -->
     </header>
 </template>
 
 <style lang="scss">
-h1 {
-    text-transform: uppercase;
+header {
+    background-color: white;
+
+    .content {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 1.5rem 0;
+
+        img {
+            background-color: black;
+        }
+    }
 }
 </style>
