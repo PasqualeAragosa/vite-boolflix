@@ -26,11 +26,38 @@ export default {
                         </div>
                         <!-- /.images -->
                         <div class="details">
-                            <p class="title">Titolo: {{ movie.title }}</p>
-                            <p class="original_title">Titolo originale: {{ movie.original_title }}</p>
-                            <p>Lingua: {{ movie.original_language }}</p>
-                            <p>Voto: {{ movie.vote_average }}</p>
-                            <p>Trama: {{ movie.overview }}</p>
+                            <div class="title">
+                                <h4>Titolo:</h4>
+                                <span>{{ movie.title }}</span>
+                            </div>
+                            <!-- /.title -->
+                            <div v-if="movie.title !== movie.original_title" class="original_title">
+                                <h4>Titolo originale:</h4>
+                                <span>{{ movie.original_title }}</span>
+                            </div>
+                            <!-- /.original_title -->
+                            <div class="language">
+                                <h4>Lingua:</h4>
+                                <!-- <span>{{ movie.original_language }}</span> -->
+                                <img v-if="movie.original_language === 'en'" src="../../assets/img/england.png" alt="">
+                                <img v-else-if="movie.original_language === 'it'" src="../../assets/img/italy.png"
+                                    alt="">
+                                <img v-else-if="movie.original_language === 'ja'" src="../../assets/img/japan.png"
+                                    alt="">
+                                <img v-else="movie.original_language !== 'ja' && movie.original_language !== 'it' && movie.original_language !== 'en'"
+                                    src="" alt="">
+                            </div>
+                            <!-- /.language -->
+                            <div class="rate">
+                                <h4>Voto:</h4>
+                                <span>{{ movie.vote_average }}</span>
+                            </div>
+                            <!-- /.rate -->
+                            <div class="overview">
+                                <h4>Trama:</h4>
+                                <span>{{ movie.overview }}</span>
+                            </div>
+                            <!-- /.overview -->
                         </div>
                         <!-- /.details -->
                     </div>
@@ -50,6 +77,7 @@ export default {
     width: 300px;
     color: white;
     position: relative;
+    overflow-y: auto;
 
     .images {
 
@@ -69,6 +97,14 @@ export default {
         z-index: -1;
         font-size: 1rem;
         line-height: 1.5rem;
+
+        .language {
+            img {
+                width: 30px;
+                margin-left: 0.5rem;
+            }
+        }
+
     }
 }
 </style>
