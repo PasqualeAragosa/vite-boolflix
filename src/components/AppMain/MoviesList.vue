@@ -20,10 +20,14 @@ export default {
         <div class="container">
             <div class="row g-2">
                 <div class="col-3" v-for="movie in store.movies">
-                    <p>{{ movie.title }}</p>
-                    <p>{{ movie.original_title }}</p>
-                    <p>{{ movie.original_language }}</p>
-                    <p>{{ movie.vote_average }}</p>
+                    <div class="my_card">
+                        <img :src="movie.poster_path" alt="">
+                        <p>{{ movie.title }}</p>
+                        <p>{{ movie.original_title }}</p>
+                        <p>{{ movie.original_language }}</p>
+                        <p>{{ movie.vote_average }}</p>
+                    </div>
+                    <!-- /.my_card -->
                 </div>
                 <!-- /.col-3 -->
             </div>
