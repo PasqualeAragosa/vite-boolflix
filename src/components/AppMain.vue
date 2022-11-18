@@ -18,11 +18,18 @@ export default {
     methods: {
         callApi(url) {
             if (this.store.query !== null) {
-                url += `?api_key=${this.store.api_key}&query=${this.store.query}`
-                axios.get(url)
+
+                const url_movies = `${url + this.store.API_movie + this.store.api_key}&query=${this.store.query}`;
+                const url_shows = `${url + this.store.API_shows + this.store.api_key}&query=${this.store.query}`;
+                console.log(url_movies);
+                console.log(url_shows);
+
+                axios.get(url_movies, url_shows)
                     .then(response => {
-                        console.log(url);
+                        console.log(url_movies);
+                        console.log(url_shows);
                         this.store.movies = response.data.results;
+                        this.store.shows = response.data.results
                         this.store.query = '';
                     })
                     .catch(error => {
@@ -41,7 +48,7 @@ export default {
 
 <template>
     <main>
-        <SearchBox @filterByMovie="callApi(store.API_url)" />
+        <SearchBox @filterByMovie="callApi(store.API_movie)" />
         <MoviesList />
     </main>
 </template>
