@@ -14,7 +14,7 @@ export default {
 <template>
     <div class="search_box">
         <input type="search" v-model="store.query" @keyup.enter="$emit('filterByMovie')">
-        <button type="submit" @click="$emit('filterByMovie')">Search</button>
+        <button type="button" class="btn btn-outline-danger" @click="$emit('filterByMovie')">Search</button>
     </div>
     <!-- /.search_box -->
 </template>
