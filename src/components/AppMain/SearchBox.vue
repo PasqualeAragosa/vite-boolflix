@@ -20,5 +20,7 @@ export default {
 </template>
 
 <style lang="scss">
-
+button {
+    margin-left: 00.5rem;
+}
 </style>
