@@ -3,7 +3,7 @@ import { reactive } from 'vue';
 export const store = reactive({
 
     movies: null,
-    query: 'ritorno al futuro',
+    query: null,
     errorMessage: null,
     API_url: 'https://api.themoviedb.org/3/search/movie',
     API_images: 'https://image.tmdb.org/t/p/w342/',
