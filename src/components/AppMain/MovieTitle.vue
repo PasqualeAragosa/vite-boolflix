@@ -28,7 +28,7 @@ export default {
                 </div>
                 <!-- /.title -->
                 <div v-if="movie.title !== movie.original_title" class="original_title d-flex gap-2">
-                    <h5>Titolo originale:</h5>
+                    <h5>Originale:</h5>
                     <span>{{ movie.original_title }}</span>
                 </div>
                 <!-- /.original_title -->
