@@ -104,6 +104,7 @@ export default {
         font-size: 0.9rem;
         padding: 1rem 0 0 0.5rem;
         line-height: 1.5rem;
+        overflow-y: auto;
         position: absolute;
         top: 0%;
         overflow-y: auto;
